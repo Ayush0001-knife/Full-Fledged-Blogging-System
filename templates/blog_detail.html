@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Page content-->
+<div class="container mt-5">
+      <div class="row">
+            <div class="col-lg-8">
+                  <!-- Post content-->
+                  <article>
+                        <!-- Post header-->
+                        <header class="mb-4">
+                              <!-- Post title-->
+                              <h1 class="fw-bolder mb-1">{{ blog.title }}</h1>
+                              <!-- Post meta content-->
+                              <div class="text-muted fst-italic mb-2">Posted on {{ blog.created_at }} by {{
+                                    blog.author }}</div>
+                              <!-- Post category-->
+                              <a class="badge bg-warning text-decoration-none text-light" href="#!">{{
+                                    blog.category }}</a>
+                        </header>
+                        <!-- Preview image figure-->
+                        <figure class="mb-4"><img class="img-fluid rounded" src="{{ blog.featured_image.url }}"
+                                    alt="..." /></figure>
+                        <!-- Post content-->
+                        <section class="mb-5">
+                              <p class="fs-5 mb-4">{{ blog.short_description }}</p>
+                              <p class="fs-5 mb-4">{{ blog.blog_body }}</p>
+
+                              <!-- Comments -->
+                              <h4>Comments (3)</h4>
+
+                              <div class="card mt-2">
+                                    <div class="card-body">
+                                          <p class="card-text mb-0">
+                                                This was a very informative article. I really enjoyed reading it and
+                                                learned a lot!
+                                          </p>
+                                          <span>
+                                                <small>By Rahul Sharma</small>
+                                                <small>| 2 hours ago</small>
+                                          </span>
+                                    </div>
+                              </div>
+
+                              <div class="card mt-2">
+                                    <div class="card-body">
+                                          <p class="card-text mb-0">
+                                                Great explanation! Looking forward to reading more blogs like this.
+                                          </p>
+                                          <span>
+                                                <small>By Priya Verma</small>
+                                                <small>| 1 day ago</small>
+                                          </span>
+                                    </div>
+                              </div>
+
+                              <div class="card mt-2">
+                                    <div class="card-body">
+                                          <p class="card-text mb-0">
+                                                Thanks for sharing this content. It was easy to understand and very
+                                                helpful.
+                                          </p>
+                                          <span>
+                                                <small>By Aman Gupta</small>
+                                                <small>| 3 days ago</small>
+                                          </span>
+                                    </div>
+                              </div>
+
+                              <br>
+
+                              <div class="form-group">
+                                    <form action="#" method="POST">
+                                          <div class="form-group">
+                                                <textarea name="comment" class="form-control"
+                                                      placeholder="Write your comment..." rows="4"></textarea>
+
+                                                <input type="submit" value="Submit" class="btn btn-primary mt-2">
+                                          </div>
+                                    </form>
+                              </div>
+
+                        </section>
+                  </article>
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+
+                  <!-- Categories widget-->
+                  <div class="card mb-4 p-2">
+                        <h4 class="font-italic">Categories</h4>
+                        <div class="card-body">
+                              <div class="row">
+                                    <div class="col-sm-6">
+                                          <ul class="list-unstyled mb-0">
+                                                {% for cat in categories %}
+                                                <li><a href="{% url 'posts_by_category' cat.id %}">
+                                                            {{cat.category_name}}</a></li>
+                                                {% endfor %}
+                                          </ul>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <!-- Side widget-->
+                  <div class="card mb-4 p-3">
+                        <h4 class="font-italic">Follow Us</h4>
+                        <ol class="list-unstyled">
+                              <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                              <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                              <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+                              <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+                              <li><a href="https://www.github.com" target="_blank">GitHub</a></li>
+                        </ol>
+                  </div>
+            </div>
+      </div>
+</div>
+
+{% endblock %}

@@ -7,4 +7,5 @@ from django.urls import include
 
 urlpatterns = [
       path('<int:category_id>/',views.posts_by_category,name='posts_by_category'),
+      path('<slug:slug>/',views.blog_detail,name='blog_detail'),
 ]
