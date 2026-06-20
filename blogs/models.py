@@ -14,7 +14,7 @@ class Category(models.Model):
 
 Status_Choices = (
     ("draft",'Draft'),
-    ("published",'Published')
+    ("published","Published")
 )
 class Blog(models.Model):
     title = models.CharField(max_length=100)
