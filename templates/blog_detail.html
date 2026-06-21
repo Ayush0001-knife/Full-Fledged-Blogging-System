@@ -107,11 +107,9 @@
                   <div class="card mb-4 p-3">
                         <h4 class="font-italic">Follow Us</h4>
                         <ol class="list-unstyled">
-                              <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
-                              <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-                              <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
-                              <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
-                              <li><a href="https://www.github.com" target="_blank">GitHub</a></li>
+                              {% for link in social_links %}
+                              <li><a href="{{link.link}}" target="_blank">{{link.platform}}</a></li>
+                              {% endfor %}
                         </ol>
                   </div>
             </div>

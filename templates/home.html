@@ -65,9 +65,9 @@
                   <div class="p-3">
                         <h4 class="font-italic">Follow Us</h4>
                         <ol class="list-unstyled">
-                              <li><a href="#" target="_blank">Linkedin</a></li>
-                              <li><a href="#" target="_blank">Github</a></li>
-                              <li><a href="#" target="_blank">Instagram</a></li>
+                              {% for link in social_links %}
+                              <li><a href="{{link.link}}" target="_blank">{{link.platform}}</a></li>
+                              {% endfor %}
                         </ol>
                   </div>
             </aside>

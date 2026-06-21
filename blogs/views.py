@@ -21,6 +21,7 @@ def posts_by_category(request, category_id):
     
     # Use get_object_or_404 when you want to show 404 error page if the category does not exist
     category = get_object_or_404(Category, pk=category_id)
+
     
     context = {
         'posts': posts,
@@ -36,3 +37,6 @@ def blog_detail(request,slug):
         'blog':blog,
     }
     return render(request,'blog_detail.html',context)
+
+def search(request):
+    return render(request,'search.html')    
